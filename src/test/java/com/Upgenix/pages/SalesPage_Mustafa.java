@@ -58,7 +58,7 @@ public class SalesPage_Mustafa {
     @FindBy(xpath = "//input[@class='o_searchview_input']")
     private static WebElement searchBox;
 
-    @FindBy(xpath = "//strong[@class='o_kanban_record_title oe_partner_heading']")
+    @FindBy(xpath = "(//strong[@class='o_kanban_record_title oe_partner_heading'])[1]")
     private static WebElement customerData;
 
 
@@ -146,6 +146,7 @@ public class SalesPage_Mustafa {
 
     public static void newCustomerData() throws InterruptedException {
         searchBox.sendKeys(ConfigurationReader.getProperty("newuser") + Keys.ENTER);
+        wait.until(ExpectedConditions.visibilityOf(customerData));
         String newUserData = customerData.getText();
         Boolean dataVerification = newUserData.contains(ConfigurationReader.getProperty("newuser"));
         Thread.sleep(2000);
