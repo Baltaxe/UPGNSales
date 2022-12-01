@@ -40,3 +40,4 @@ Feature: As a User, I should be able to create and edit a new customers from "Sa
     And user clicks the "Customers" from the left-side menu-Orders segment
     And user enters the customer's name in the Search Box
     Then user verifies the created new customer data will be displayed in the Customers module
+

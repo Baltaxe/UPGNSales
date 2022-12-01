@@ -151,5 +151,6 @@ public class SalesPage_Mustafa {
         Thread.sleep(2000);
         System.out.println("@UPGN-915 - New User in Data is verified");
 
+
     }
 }
