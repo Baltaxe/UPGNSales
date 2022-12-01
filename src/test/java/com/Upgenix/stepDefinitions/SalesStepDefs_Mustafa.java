@@ -67,12 +67,12 @@ public class SalesStepDefs_Mustafa {
     }
 
     @When("user enters the customer's name in the Search Box")
-    public void user_enters_the_customer_s_name_in_the_search_box() {
+    public void user_enters_the_customer_s_name_in_the_search_box() throws InterruptedException {
         SalesPage_Mustafa.searchBox();
     }
 
     @Then("user verifies the created new customer data will be displayed in the Customers module")
-    public void user_verifies_the_created_new_customer_data_will_be_displayed_in_the_customers_module() throws InterruptedException {
+    public void user_verifies_the_created_new_customer_data_will_be_displayed_in_the_customers_module() {
         SalesPage_Mustafa.newCustomerData();
     }
 

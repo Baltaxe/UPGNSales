@@ -2,13 +2,17 @@ package com.Upgenix.pages;
 
 import com.Upgenix.utilities.ConfigurationReader;
 import com.Upgenix.utilities.Driver;
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.Assert;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.sql.DriverManager;
 
 public class SalesPage_Mustafa {
     public SalesPage_Mustafa() {
@@ -58,7 +62,7 @@ public class SalesPage_Mustafa {
     @FindBy(xpath = "//input[@class='o_searchview_input']")
     private static WebElement searchBox;
 
-    @FindBy(xpath = "(//strong[@class='o_kanban_record_title oe_partner_heading'])[1]")
+    @FindBy(xpath = "//strong[contains (@class, 'title')]")
     private static WebElement customerData;
 
 
@@ -140,16 +144,16 @@ public class SalesPage_Mustafa {
         System.out.println("@UPGN-914 - New User in Title " + newUser + " is verified");
     }
 
-    public static void searchBox() {
-        wait.until(ExpectedConditions.visibilityOf(customerData));
+    public static void searchBox() throws InterruptedException {
+        Thread.sleep(4000);
+        searchBox.sendKeys(ConfigurationReader.getProperty("newuser") + Keys.ENTER);
+
     }
 
-    public static void newCustomerData() throws InterruptedException {
-        searchBox.sendKeys(ConfigurationReader.getProperty("newuser") + Keys.ENTER);
+    public static void newCustomerData() {
         wait.until(ExpectedConditions.visibilityOf(customerData));
         String newUserData = customerData.getText();
         Boolean dataVerification = newUserData.contains(ConfigurationReader.getProperty("newuser"));
-        Thread.sleep(2000);
         System.out.println("@UPGN-915 - New User in Data is verified");
 
 
