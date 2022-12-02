@@ -72,7 +72,7 @@ public class SalesStepDefs_Mustafa {
     }
 
     @Then("user verifies the created new customer data will be displayed in the Customers module")
-    public void user_verifies_the_created_new_customer_data_will_be_displayed_in_the_customers_module() {
+    public void user_verifies_the_created_new_customer_data_will_be_displayed_in_the_customers_module() throws InterruptedException {
         SalesPage_Mustafa.newCustomerData();
     }
 

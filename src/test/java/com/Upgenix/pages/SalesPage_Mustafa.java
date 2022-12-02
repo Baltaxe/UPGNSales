@@ -140,17 +140,18 @@ public class SalesPage_Mustafa {
         wait.until(ExpectedConditions.visibilityOf(customersTitle));
         Thread.sleep(2000);
         String newUser = Driver.getDriver().getTitle();
-        newUser.contains(ConfigurationReader.getProperty("newuser"));
+        System.out.println(newUser+ " is the new User");
         System.out.println("@UPGN-914 - New User in Title " + newUser + " is verified");
     }
 
     public static void searchBox() throws InterruptedException {
-        Thread.sleep(4000);
+        Thread.sleep(5000);
         searchBox.sendKeys(ConfigurationReader.getProperty("newuser") + Keys.ENTER);
 
     }
 
-    public static void newCustomerData() {
+    public static void newCustomerData() throws InterruptedException {
+        Thread.sleep(4000);
         wait.until(ExpectedConditions.visibilityOf(customerData));
         String newUserData = customerData.getText();
         Boolean dataVerification = newUserData.contains(ConfigurationReader.getProperty("newuser"));
