@@ -2,10 +2,8 @@ package com.Upgenix.pages;
 
 import com.Upgenix.utilities.ConfigurationReader;
 import com.Upgenix.utilities.Driver;
-import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.Assert;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
