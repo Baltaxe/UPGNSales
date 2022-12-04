@@ -17,6 +17,7 @@ public class SalesPage_Mustafa {
         PageFactory.initElements(Driver.getDriver(), this);
     }
 
+
     static WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 20);
     @FindBy(xpath = "//a[contains(@href,'login')]")
     public static WebElement loginMenu;

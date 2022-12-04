@@ -6,7 +6,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-public class SalesStepDefs_Mustafa {
+public class Sales_StepDefs_Mustafa {
 
     SalesPage_Mustafa salesPageMustafa = new SalesPage_Mustafa();
 
