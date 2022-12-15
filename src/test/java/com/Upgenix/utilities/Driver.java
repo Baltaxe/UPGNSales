@@ -3,6 +3,7 @@ package com.Upgenix.utilities;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+
 import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -29,6 +30,7 @@ public class Driver {
 
     private static InheritableThreadLocal<WebDriver> driverPool = new InheritableThreadLocal<>();
 
+
     /*
     Create a re-usable utility method which will return same driver instance when we call it
      */
@@ -49,11 +51,17 @@ public class Driver {
             */
             switch (browserType){
                 case "chrome":
-
+                    /* took from someone not the instructor
+                    ChromeOptions options = new ChromeOptions();
+                    options.addArguments("--lang=en-GB");
+                    WebDriverManager.chromedriver().setup();
+                    driver = new ChromeDriver(options);
+                     */
                     WebDriverManager.chromedriver().setup();
                     driverPool.set(new ChromeDriver());
                     driverPool.get().manage().window().maximize();
                     driverPool.get().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+
                     break;
                 case "firefox":
                     WebDriverManager.firefoxdriver().setup();
@@ -63,7 +71,7 @@ public class Driver {
                     break;
                 case "remote-chrome":
                     // assign your grid server address
-                    String gridAdress = "44.212.68.65"; // put your own Linux grid IP here
+                    String gridAdress = "54.163.58.142"; // put your own Linux grid IP here
                     try {
                         URL url = new URL("http://"+gridAdress+":4444/wd/hub");
                         DesiredCapabilities desiredCapabilities = new DesiredCapabilities();

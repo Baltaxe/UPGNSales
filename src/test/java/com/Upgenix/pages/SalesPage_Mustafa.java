@@ -10,59 +10,57 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.sql.DriverManager;
 
 public class SalesPage_Mustafa {
     public SalesPage_Mustafa() {
         PageFactory.initElements(Driver.getDriver(), this);
     }
-
-
     static WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 20);
+
     @FindBy(xpath = "//a[contains(@href,'login')]")
     public static WebElement loginMenu;
 
     @FindBy(id = "login")
-    private static WebElement emailBox;
+    public static WebElement emailBox;
 
     @FindBy(id = "password")
-    private static WebElement passwordBox;
+    public static WebElement passwordBox;
 
     @FindBy(xpath = "//button[@type='submit']")
-    private static WebElement loginBtn;
+    public static WebElement loginBtn;
 
     @FindBy(xpath = "//span[.='POSManager35']")
-    private static WebElement userAccount;
+    public static WebElement userAccount;
 
     @FindBy(xpath = "//a[@href='/web#menu_id=445&action=']")
-    private static WebElement salesMenu;
+    public static WebElement salesMenu;
 
     @FindBy(xpath = "//a[@href='/web#menu_id=447&action=48']")
-    private static WebElement customersMenu;
+    public static WebElement customersMenu;
 
     @FindBy(xpath = "//li[.='Customers']")
-    private static WebElement customersTitle;
+    public static WebElement customersTitle;
 
     @FindBy(xpath = "//button[contains(text(),'Create')]")
-    private static WebElement createMenu;
+    public static WebElement createMenu;
 
     @FindBy(xpath = "//li[.='New']")
-    private static WebElement newCustomerForm;
+    public static WebElement newCustomerForm;
 
     @FindBy(xpath = "//input[@name='name']")
-    private static WebElement nameBox;
+    public static WebElement nameBox;
 
     @FindBy(xpath = "//button[@accesskey='s']")
-    private static WebElement saveBtn;
+    public static WebElement saveBtn;
 
     @FindBy(xpath = "//div[@class='o_notification_title']")
-    private static WebElement alertMessage;
+    public static WebElement alertMessage;
 
     @FindBy(xpath = "//input[@class='o_searchview_input']")
-    private static WebElement searchBox;
+    public static WebElement searchBox;
 
     @FindBy(xpath = "//strong[contains (@class, 'title')]")
-    private static WebElement customerData;
+    public static WebElement customerData;
 
 
     public static void goTo() {
@@ -155,7 +153,5 @@ public class SalesPage_Mustafa {
         String newUserData = customerData.getText();
         Boolean dataVerification = newUserData.contains(ConfigurationReader.getProperty("newuser"));
         System.out.println("@UPGN-915 - New User in Data is verified");
-
-
     }
 }

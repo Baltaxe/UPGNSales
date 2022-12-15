@@ -16,7 +16,7 @@ import org.junit.runner.RunWith;
         features = "src/test/resources",
         glue = "com/Upgenix/stepDefinitions",
         dryRun = false,
-        tags = "",
+        tags = "@UPGN-885",
         publish = false
 
 )
